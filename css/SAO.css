@@ -1,0 +1,242 @@
+/* ELIMINA CUALQUIER MARGEN POR DEFECTO (Esto quita el blanco) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bodyPaginawebSAO {
+    background-color: black;
+    overflow-x: hidden; /* Evita que aparezca scroll horizontal */
+}
+
+.bodyAincrad {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            position: relative; /* Necesario para que el GIF se oriente respecto al cuerpo */
+        }
+
+        /* Estilo para el texto de bienvenida */
+        .pAincrad {
+            text-align: center;
+            padding-top: 50px;
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: rgb(109, 243, 248);
+              font-weight: bold;
+        }
+
+        /* Imagen principal centrada */
+        .img1 {
+            display: block;
+            margin: 20px auto; /* Centrado horizontal con margen arriba/abajo */
+            max-width: 60%;
+            height: auto;
+            border: 2px solid #333;
+        }
+
+        /* GIF ARRIBA A LA IZQUIERDA */
+        .img2 {
+            position: absolute; /* Lo saca del flujo normal para moverlo libremente */
+            top: 10px;          /* Distancia desde el borde superior */
+            left: 10px;         /* Distancia desde el borde izquierdo */
+            width: 150px;        /* Ajusta el tamaño según prefieras */
+            height: auto;
+        }
+        .img3 {
+            position: absolute; /* Lo saca del flujo normal para moverlo libremente */
+            top: 10px;          /* Distancia desde el borde superior */
+            right: 10px;         /* Distancia desde el borde izquierdo */
+            width: 150px;        /* Ajusta el tamaño según prefieras */
+            height: auto;
+        }
+
+        .bodyalicization {
+            background-color: aliceblue;
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        /* Estilo para el texto de bienvenida */
+        .palicization {
+            text-align: center;
+            padding-top: 50px;
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: gold;
+              font-weight: bold;
+        }
+
+        /* Imagen principal centrada */
+        .img1alicization {
+            display: block;
+            margin: 20px auto; /* Centrado horizontal con margen arriba/abajo */
+            max-width: 60%;
+            height: auto;
+            border: 2px solid #333;
+        }
+
+        .bodyfairydance {
+            background-color: aliceblue;
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        /* Estilo para el texto de bienvenida */
+        .pfairydance {
+            text-align: center;
+            padding-top: 50px;
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: rgb(109, 243, 248);
+              font-weight: bold;
+        }
+
+        /* Imagen principal centrada */
+        .img1fairydance {
+            display: block;
+            margin: 20px auto; /* Centrado horizontal con margen arriba/abajo */
+            max-width: 60%;
+            height: auto;
+            border: 2px solid #333;
+        }
+
+         .bodyprogressive {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        /* Estilo para el texto de bienvenida */
+        .pprogressive {
+            text-align: center;
+            padding-top: 50px;
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: brown;
+              font-weight: bold;
+        }
+
+        /* Imagen principal centrada */
+        .img1progressive {
+            display: block;
+            margin: 20px auto; /* Centrado horizontal con margen arriba/abajo */
+            max-width: 60%;
+            height: auto;
+            border: 2px solid #333;
+        }
+
+
+/* GRID LAYOUT */
+.contenedor {
+    display: grid;
+    height: 100vh;
+    /* 'auto' para el gif, '1fr' para que el video ocupe TODO el resto */
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "header header"
+        "nav nav"
+        "sidebar main"
+        "footer footer";
+}
+
+/* HEADER Y NAV (FLEXBOX) */
+.header {
+    grid-area: header;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.imagen-logo { height: 50px; }
+
+.nav-principal {
+    grid-area: nav;
+    background-color: #111;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    padding: 15px;
+}
+
+.menu a {
+    color: aqua;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* SIDEBAR (GIF) */
+.gif {
+    grid-area: sidebar;
+    background-color: black;
+    display: flex;
+}
+
+.gif img {
+    height: 100%; /* Se ajusta verticalmente */
+    display: block;
+}
+
+/* MAIN (VIDEO OCUPANDO TODO) */
+.main-video {
+    grid-area: main;
+    position: relative;
+    background-color: black;
+    width: 100%; /* Asegura el ancho total de su columna */
+}
+
+.video-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto estira el video sin dejar espacios blancos */
+    display: block;    /* Evita espacios fantasmas debajo del video */
+}
+
+.footer {
+    grid-area: footer;
+    background-color: black;
+    color: #444;
+    text-align: center;
+    padding: 10px;
+}
+.imgCentro{
+    display: block;       /* Permite que los márgenes funcionen */
+    margin-left: auto;    /* Empuja desde la izquierda */
+    margin-right: auto;   /* Empuja desde la derecha */
+    max-width: 80%;       /* Para que no se salga de la pantalla */
+    height: auto;         /* Mantiene la proporción */
+    padding: 20px;
+}
+
+/* RESPONSIVE (Móviles) */
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "main"
+            "sidebar"
+            "footer";
+    }
+}
